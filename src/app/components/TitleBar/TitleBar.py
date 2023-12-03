@@ -25,13 +25,13 @@ class TitleBar(QWidget):
     def __init__(self, parent=None):
         super(TitleBar, self).__init__(parent)
         self.initUI()
+        self.mousePressed = False
+        self.dragPos = None
     
     def initUI(self):
         layout = QHBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(0)
-        self.setObjectName("titleBar")
-        self.setStyleSheet("#titleBar { background-color: #101323; }")
 
         stylesheet_path = os.path.join(os.path.dirname(__file__), 'style.qss')
         with open(stylesheet_path, "r") as file:
@@ -94,3 +94,16 @@ class TitleBar(QWidget):
     
     def closeWindow(self):
         self.window().close()
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self._mousePressed = True
+            self._dragPos = event.globalPos() - self.window().frameGeometry().topLeft()
+    
+    def mouseMoveEvent(self, event):
+        if self._mousePressed and self._dragPos is not None:
+            self.window().move(event.globalPos() - self._dragPos)
+    
+    def mouseReleaseEvent(self, event):
+        self._mousePressed = False
+        self._dragPos = None
