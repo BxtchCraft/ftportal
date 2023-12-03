@@ -1,0 +1,52 @@
+/**
+*                       ██                                                        
+*                      ███                          ██            ██              
+*                      ███     ███              ██████        ██████              
+*    ███    ██ ████     █   ████████    ██████   ███████████   █████    ███     ██
+* ██████  ████  ████  █████  █████    ██████████ ██████ █████  █████ ██████ ██████
+*  █████   ████   ██  █████  █████   █████ ████  █████  █████  █████  █████  █████
+*  ██████ █████   ██  █████  █████   █████       █████  █████  █████  █████  █████
+*   █████ ██████████  █████  █████    █████     ██████  █████  █████  █████  █████
+*   ███████ ███████   █████   ███████  █████████ █████  █████  █████  ████████████
+*     █████   █████   ██████   █████     ████    ██████ ██████ █████    ███  █████
+*                                                                      █████ █████
+*                                                                      ████  ████ 
+*                                                                      ████████                              
+* src/app/components/TitleBar/styles.qss
+* Author: Morrigan Zierk
+*/
+
+#titleBar {
+    color: #404968;
+}
+
+TitleBar QLabel {
+    padding: 5px;
+    color: #FFFFFF;
+    font-family: 'Segoe UI';
+    background: #101323;
+}
+
+#logoIcon {
+    border-top-left-radius: 8px;
+}
+
+TitleBar QPushButton {
+    background-color: #101323;
+    border: none;
+    width: 36px;
+    height: 36px;
+}
+
+TitleBar QPushButton#closeButton {
+    border-radius: 0px;
+    border-top-right-radius: 8px;
+}
+
+TitleBar QPushButton:hover {
+    background-color: #191D33;
+}
+
+TitleBar QPushButton#closeButton:hover {
+    background-color: #EB1123;
+}

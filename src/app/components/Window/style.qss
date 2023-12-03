@@ -1,0 +1,11 @@
+/* MainWindow {
+    border-radius: 12px;
+    background: #101323;
+    border: 1px solid #404968;
+} */
+
+#centralContainer {
+    background: #101323;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
